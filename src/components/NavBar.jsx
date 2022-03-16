@@ -1,11 +1,11 @@
 import Button from '@mui/material/Button';
-
+import  logo from "../assets/logo1234.jpeg"
 function NavBar(){
     return(
         <header className='main-header'>
         <div className='container-logo'>
         <img
-        src="logo1234.jpeg"
+        src={logo}
         className="img-header"/>
         </div>
         <ul className='navbar'>
