@@ -26,3 +26,14 @@ ul.navbar li {
 .container-logo img{
   width: 100%;
 }
+.card-item{
+  float: left;
+  border: 1px solid #ababab;
+  width: 200px;
+  margin-top: 20px;
+  margin-left: 20px;
+  box-shadow: 1px 1px 5px #0000002b;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
