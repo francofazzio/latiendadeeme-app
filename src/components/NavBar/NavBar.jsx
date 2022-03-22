@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button';
-import  logo from "‘../../assets/logo1234.jpeg’"
+import  logo from '../../assets/logo1234.jpeg';
 import CartWidget from '../CartWidget/CartWidget';
 import Card from '../Card/Card';
 import './NavBar.css'
