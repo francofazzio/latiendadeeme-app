@@ -1,0 +1,25 @@
+.card-item > {
+    width: 100%
+}
+
+.container-card-data {
+    float: left;
+    width: 100%;
+    padding: 10px
+}
+
+.container-card-data h2 {
+    font-size: 19px;
+    letter-spacing: 2px;
+    margin: 0px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.container-card-data p {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+

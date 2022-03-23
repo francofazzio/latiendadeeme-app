@@ -29,13 +29,14 @@ ul.navbar li {
 .card-item{
   float: left;
   border: 1px solid #ababab;
-  width: 200px;
+  width: calc(33.333% - 14px);
   margin-top: 20px;
   margin-left: 20px;
   box-shadow: 1px 1px 5px #0000002b;
   border-radius: 5px;
   padding: 10px;
   text-align: center;
+  overflow: hidden;
 }
 .carrito-header{
   border: 1px solid black;
