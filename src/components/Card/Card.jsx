@@ -2,7 +2,7 @@ import React,{ useState } from 'react'
 import './Card.css'
 
 export default function Card({ data }) {
-    const {title, price, talle, stock, image} = data
+    const {title, price, talle,stock, image} = data
     const [ count, setCount ] = useState(1)
     const [Stock, setStock] = useState(10)
     
@@ -17,7 +17,7 @@ export default function Card({ data }) {
 
     return(
         <div className="card-item">
-            <img src={'././${image}'} alt={image} />
+            <img src= {`./${image}`} alt={image} />
 
             <div className='container-card-data'>
             <h2>{title}</h2>

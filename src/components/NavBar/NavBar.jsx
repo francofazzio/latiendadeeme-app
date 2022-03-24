@@ -1,5 +1,4 @@
 import Button from '@mui/material/Button';
-import  logo from '../../assets/logo1234.jpeg';
 import CartWidget from '../CartWidget/CartWidget';
 import Card from '../Card/Card';
 import './NavBar.css'
@@ -8,7 +7,7 @@ function NavBar(props){
         <header className='main-header'>
         <div className='container-logo'>
         <img
-        src={logo}
+        src="logo1234.jpeg"
         className="img-header"/>
         </div>
         <ul className='navbar'>

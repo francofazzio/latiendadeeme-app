@@ -1,9 +1,9 @@
-import carrito from '../../assets/carrito.jpg'
+
 const CartWidget = () => {
     return (
         <div>
         <img
-        src={carrito}
+        src={'./carrito.jpg'}
         className="carrito-header"/>
         </div>
     

@@ -8,7 +8,7 @@ const ListProducts = ({children}) => {
         title : 'Magnolia Intermedio',
         talle : 'XL',
         price : 1500,
-        image: 'moño1.jpeg',
+        image: 'moño6.jpeg',
         stock: 5
     },
     {
@@ -16,7 +16,7 @@ const ListProducts = ({children}) => {
         title : 'Pasteles',
         talle : 'XL',
         price : 1500,
-        image : 'moño2jpeg',
+        image : 'moño5.jpeg',
         stock : 5
         
     },
@@ -25,7 +25,7 @@ const ListProducts = ({children}) => {
         title : 'Magnolia Lycra',
         talle : 'XL',
          price : 1500,
-         image:'moño3.jpeg',
+         image:'moño4.jpeg',
          stock : 5
          
 
@@ -35,7 +35,7 @@ const ListProducts = ({children}) => {
         title : 'Jazmin Bordado Especial',
         talle : 'XL',
          price : 1500,
-         image: 'moño4.jpeg',
+         image: 'moño3.jpeg',
          stock : 6
         
     },
@@ -44,7 +44,7 @@ const ListProducts = ({children}) => {
         title : 'Ellos',
         talle : 'XL',
          price : 1500,
-         image: 'moño5.jpeg',
+         image: 'moño2.jpeg',
          stock : 6
         
     },
@@ -53,7 +53,7 @@ const ListProducts = ({children}) => {
         title : 'Escolares',
         talle : 'XL',
          price : 1500,
-         image: 'moño6.jpeg',
+         image: 'moño1.jpeg',
          stock : 6
         
     },

@@ -12,6 +12,7 @@ function App() {
     {/*<p>Class component:</p>
     <NavBarClass /> */}
     <ListProducts>
+     <p>La Tienda De Eme</p>
     <p>Nuestros Productos</p>
     </ListProducts>  
     </div>

@@ -1,23 +1,27 @@
 .img-header {
-  border: 1px solid black;
+  border: 1px solid #eee8e4c7 ;
   width: 100px;
 }
 header.main-header{
   width: 100%;
   display: flex;
   padding: 10px 25px;
-  box-shadow: 1px 5px 15px #81818129;
+  box-shadow: 1px 5px 15px #c04a13a1 ;
   justify-content: space-between;
   box-sizing: border-box;
-  
+  text-transform: uppercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+ background-color: #eee8e4c7;
 }
 ul.navbar{
   list-style: none;
   display: flex;
 }
 
+
 ul.navbar li {
   margin-right: 15px;
+ 
 }
 .container-logo{
   width: 80px;
@@ -26,9 +30,15 @@ ul.navbar li {
 .container-logo img{
   width: 100%;
 }
+header.main-header li button {
+  background-color: #c04a13a1;
+  font-family: Georgia, 'Times New Roman', Times, serif;}
+header.main-header li button:hover {
+  background:brown
+}
 .card-item{
   float: left;
-  border: 1px solid #ababab;
+  border: 1px ;
   width: calc(33.333% - 14px);
   margin-top: 20px;
   margin-left: 20px;
@@ -39,6 +49,11 @@ ul.navbar li {
   overflow: hidden;
 }
 .carrito-header{
-  border: 1px solid black;
+  border: 1px solid #eee8e4c7;
   width: 100px;
+}
+.container-cards {
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
 }

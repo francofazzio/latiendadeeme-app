@@ -1,10 +1,13 @@
-.card-item > {
-    width: 100%
+.card-item > img {
+  width: 300px;
+  height: 400px;
+   
 }
 
 .container-card-data {
     float: left;
-    width: 100%;
+    width: 300px;
+    height: 400px;
     padding: 10px
 }
 
