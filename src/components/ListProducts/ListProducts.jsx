@@ -9,7 +9,7 @@ const ListProducts = ({children}) => {
         talle : 'XL',
         price : 1500,
         image: 'moño6.jpeg',
-        stock: 5
+        stock: 8
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ const ListProducts = ({children}) => {
         talle : 'XL',
         price : 1500,
         image : 'moño5.jpeg',
-        stock : 5
+        stock : 8
         
     },
     {     
@@ -26,7 +26,7 @@ const ListProducts = ({children}) => {
         talle : 'XL',
          price : 1500,
          image:'moño4.jpeg',
-         stock : 5
+         stock : 8
          
 
     },
@@ -36,7 +36,7 @@ const ListProducts = ({children}) => {
         talle : 'XL',
          price : 1500,
          image: 'moño3.jpeg',
-         stock : 6
+         stock : 8
         
     },
     { 
@@ -45,7 +45,7 @@ const ListProducts = ({children}) => {
         talle : 'XL',
          price : 1500,
          image: 'moño2.jpeg',
-         stock : 6
+         stock : 8
         
     },
     { 
@@ -54,7 +54,7 @@ const ListProducts = ({children}) => {
         talle : 'XL',
          price : 1500,
          image: 'moño1.jpeg',
-         stock : 6
+         stock : 8
         
     },
 ]

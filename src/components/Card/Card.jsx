@@ -1,5 +1,6 @@
 import React,{ useState } from 'react'
 import './Card.css'
+import ItemCount from '../ItemCount/ItemCount'
 
 export default function Card({ data }) {
     const {title, price, talle,stock, image} = data
@@ -23,9 +24,7 @@ export default function Card({ data }) {
             <h2>{title}</h2>
             <p>Precio : $ {price}</p>
             <p>Talle : {talle}</p>
-            <button onClick={removeStock}> Quitar Stock </button>
-            <p>Stock : {count}</p>
-            <button onClick={addStock}> Agregar Stock </button>
+            <ItemCount stock={stock}/>
         </div>
         </div>
     )
