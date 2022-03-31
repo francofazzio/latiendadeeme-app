@@ -59,11 +59,15 @@ header.main-header li button:hover {
 }
 .container-detail {
   display: flex;
-  padding: 20px 0px;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 1024px;
+  margin: 0 auto;
 }
 
 .container-detail__img {
-  width: 70%;
+  width: 100%;
+  max-width: 585px;
 }
 
 .container-detail__img img {
