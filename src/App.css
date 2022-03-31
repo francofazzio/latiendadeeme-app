@@ -63,7 +63,7 @@ header.main-header li button:hover {
 }
 
 .container-detail__img {
-  width: 65%;
+  width: 70%;
 }
 
 .container-detail__img img {
@@ -82,13 +82,13 @@ header.main-header li button:hover {
   color: white;
   width: 100%;
   border-radius: 0px;
-  font-family: 'Montserrat';
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 16px;
 }
 
 .container-detail .detail__btn-buy:hover {
   background: black;
-  color: white;
+  
 }
 
 h3.info__title {
