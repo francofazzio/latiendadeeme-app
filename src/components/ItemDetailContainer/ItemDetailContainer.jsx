@@ -1,0 +1,30 @@
+import { useState, useEffect } from "react";
+import ItemDetail from '../ItemDetail/ItemDetail'
+import mockProducto from "../../Utils/productsMock";
+
+const ItemDetailContainer = () => {
+    const [dataProduct, setDataProduct] = useState({})
+
+    const getProduct = () => {
+        return new Promise((resolve, reject) => {
+            return resolve(mockProducto)
+        })
+    }
+
+    useEffect( () => {
+        getProduct().then( (producto) => {
+            setDataProduct(producto)
+        }).finally( () => {
+            console.log("Termino la llamada")
+        })
+    }, [])
+
+    return (
+        <>
+            
+            <ItemDetail data={dataProduct}/>
+        </>
+    )
+}
+
+export default ItemDetailContainer

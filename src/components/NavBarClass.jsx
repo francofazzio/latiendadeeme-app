@@ -1,7 +1,6 @@
 import React from 'react'
 import Button from '@mui/material/Button';
 import  logo from "../assets/logo1234.jpeg"
-
 export default class NavBarClass extends React.Component {
     render(){
         return(
