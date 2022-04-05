@@ -28,6 +28,7 @@ const DetailPage = () => {
             </div>
             <div className='container-detail__info'>
                 <h3 className='info__title'>{product.title}</h3>
+                <p className='info__subtitle'>PRECIO</p>
                 <p className='info__text'>$ {product.price}</p>
                 <p className='info__subtitle'>TALLE</p>
                 <p className='info__text'>{product.talle}</p>
