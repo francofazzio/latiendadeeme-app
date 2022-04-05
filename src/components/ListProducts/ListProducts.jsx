@@ -1,9 +1,11 @@
 import { useState, useEffect} from 'react';
 import Card from '../Card/Card'
 import mockProductos from '../../Utils/productsMock'
+import { useParams } from 'react-router-dom'
 
-const ListProducts = ({children}) => {
-    
+
+    const ListProducts = ({children}) => {
+    const { category } = useParams()
 
     const [products, setProducts] = useState([])
 
@@ -16,11 +18,22 @@ const ListProducts = ({children}) => {
         });
         };
         useEffect( () => {
+            setProducts([])
             getProducts().then( (productos) => {
-                setProducts(productos)
+                category ? filterProductByCategory(productos, category) : setProducts(productos)
+            })
+        }, [category])
+    
+    
+        const filterProductByCategory = (array , category) => {
+            return array.map( (product, i) => {
+                if(product.category === category) {
+                   return setProducts(products => [...products, product]);
+                }
+            })
+        }
             
-            })  
-        }, [])
+    
        
     return(
         <div className="container-cards">

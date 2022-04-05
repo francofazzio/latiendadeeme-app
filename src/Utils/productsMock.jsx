@@ -4,6 +4,7 @@ const mockProductos = [{
     talle : 'XL',
     price : 1500,
     image: 'moño6.jpeg',
+    category:'ellas',
     stock: 8
 },
 {
@@ -12,6 +13,7 @@ const mockProductos = [{
     talle : 'XL',
     price : 1500,
     image : 'moño5.jpeg',
+    category:'ellas',
     stock : 8
     
 },
@@ -21,7 +23,9 @@ const mockProductos = [{
     talle : 'XL',
      price : 1500,
      image:'moño4.jpeg',
+     category:'ellas',
      stock : 8
+
      
 
 },
@@ -31,6 +35,7 @@ const mockProductos = [{
     talle : 'XL',
      price : 1500,
      image: 'moño3.jpeg',
+     category:'ellas',
      stock : 8
     
 },
@@ -40,6 +45,7 @@ const mockProductos = [{
     talle : 'XL',
      price : 1500,
      image: 'moño2.jpeg',
+     category:'ellos',
      stock : 8
     
 },
@@ -49,6 +55,7 @@ const mockProductos = [{
     talle : 'XL',
      price : 1500,
      image: 'moño1.jpeg',
+     category: 'escolares',
      stock : 8
     
 },
