@@ -26,7 +26,7 @@ import { useParams } from 'react-router-dom'
     
     
         const filterProductByCategory = (array , category) => {
-            return array.map( (product, i) => {
+            return array.map( (product, id) => {
                 if(product.category === category) {
                    return setProducts(products => [...products, product]);
                 }

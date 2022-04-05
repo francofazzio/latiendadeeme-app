@@ -32,10 +32,10 @@ const DetailPage = () => {
                 <p className='info__subtitle'>TALLE</p>
                 <p className='info__text'>{product.talle}</p>
                 
-                  ) 
+                  
                  </div>  
                 <p className='info__subtitle'>DETALLE</p>
-                <p className='info__text detail__text'>Moño con bordado especial de florcitas, podes elegir tu color favorito</p>
+                <p className='info__text detail__text'>A cada moño podes hacerle tu bordado especial tambien podes elegir tu color favorito</p>
                 <Button className='detail__btn-buy'>COMPRAR</Button>
             </div>
             

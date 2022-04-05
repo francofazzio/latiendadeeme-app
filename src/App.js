@@ -1,4 +1,3 @@
-
 import './App.css';
 import CartWidget from './components/CartWidget/CartWidget';
 import {Button} from'react-bootstrap';
