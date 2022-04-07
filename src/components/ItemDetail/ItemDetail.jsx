@@ -1,7 +1,17 @@
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import { useEffect, useState } from 'react';
+import { useEffect, useState} from 'react';
+import ItemCount from '../ItemCount/ItemCount';
 
+const addProduct = (cant) => {
+       
+    alert (`agregaste ${cant} producto/s`)
+    
+    
+
+   
+   
+}
 const ItemDetail = ({data}) => {
     
     return(
@@ -18,6 +28,7 @@ const ItemDetail = ({data}) => {
                 <p className='info__subtitle'>TALLE</p>
                 <p className='info__text detail__text'>{data.description}</p>
                 <Button className='detail__btn-buy'>COMPRAR</Button>
+                <p className='mostrarCantidad'>Cantidad:<ItemCount addProduct={addProduct} /></p>
             </div>
             </div>
         </Container>
