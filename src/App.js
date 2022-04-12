@@ -1,4 +1,5 @@
 import './App.css';
+import { useState, useEffect } from 'react'
 import CartWidget from './components/CartWidget/CartWidget';
 import {Button} from'react-bootstrap';
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
@@ -13,12 +14,20 @@ import ContactPage from './pages/Contact'
 import NotFoundPage from './pages/NotFound'
 import DetailPage from './pages/Detail';
 
+//context
+import { ThemeProvider } from './context/ThemeContext';
+import { CartProvider } from './context/CartContext';
+
+
 function App() {
   return (
+   
     <div className="App">
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
+   <CartProvider>
+       <ThemeProvider>
+       <BrowserRouter>
+       <NavBar />
+        <Routes>
         <Route path="/contacto" element={<ContactPage />}/>
         <Route path="/" element={<HomePage />}/>
         <Route path="/:category/" element={<HomePage />}/>
@@ -26,6 +35,10 @@ function App() {
         <Route path="*" element={<NotFoundPage />}/>
       </Routes>
     </BrowserRouter>
+    </ThemeProvider>
+    </CartProvider>
+    
+
     </div>
   );
 }

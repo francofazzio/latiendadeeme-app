@@ -1,12 +1,18 @@
+import { useState, useContext } from 'react';
 import Button from '@mui/material/Button';
 import CartWidget from '../CartWidget/CartWidget';
 import Card from '../Card/Card';
 import './NavBar.css'
 import {Link} from 'react-router-dom'
-import { useEffect } from 'react';
+import ThemeSwitch from './ThemeSwitch'
+import ThemeContext from '../../context/ThemeContext';
 
 function NavBar(props){
-  const pages = [
+  const { lightTheme, handleTheme } = useContext(ThemeContext)
+  
+  
+  console.log("Light state " , lightTheme)
+    const pages = [
     {
         title:'Home',
         url: '/'
@@ -27,12 +33,14 @@ function NavBar(props){
   
   
   return(
-        <header className='main-header'>
+        <header className={`main-header ${lightTheme ? ' light-mode' : ''}`}> 
         <div className='container-logo'>
-        <img
-        src="logo1234.jpeg"
-        className="img-header"/>
-        </div>
+            {lightTheme ? (
+                <img src="logo1234.jpeg" className="img-header"/>
+            ) : (
+            <img src="../logo1234.jpeg" className="img-header"/>
+            ) }
+            </div>
         <ul className='navbar'>
                     <li>
                         <Button className="custom-btn" variant="contained">
@@ -49,6 +57,7 @@ function NavBar(props){
                             <Link to={'/escolares'}>Escolares</Link>
                         </Button>     
                     </li>
+                    <button onClick={() => handleTheme()}>Handle Theme</button>
         {pages.map((page) => {
             return(       
              <li>
@@ -59,6 +68,7 @@ function NavBar(props){
             )
           })}
         </ul>
+        <ThemeSwitch />
         <CartWidget />
       </header>
       

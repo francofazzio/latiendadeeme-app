@@ -1,4 +1,7 @@
-import React,{ useState, useEffect } from 'react'
+import React,{ useState, useEffect, useContext } from 'react'
+import CartContext from '../../context/CartContext'
+
+
 import './Card.css'
 import ItemCount from '../ItemCount/ItemCount'
 import { Link, useNavigate } from 'react-router-dom'
@@ -6,12 +9,13 @@ import { Link, useNavigate } from 'react-router-dom'
 
 export default function Card({ data }) {
     const navigate = useNavigate();
+    const { cartProducts, addProductToCart } = useContext(CartContext)
     const {title, price, talle,stock, image, id} = data
     const [ count, setCount ] = useState(1)
     const [ countTest, setCountTest ] = useState(1)
     
     useEffect( () => {
-        console.log("useEffect")
+        console.log("cartProducts:", cartProducts)
         const onScrollWindow = () => {
             if(window.scrollY > 100 ){
                 console.log("Scroll mayor a 100")
@@ -30,16 +34,11 @@ export default function Card({ data }) {
     }
 
     const addToCart = (e) => {
-        e.stopPropagation() 
-        console.log("Agrego al carrito")
+        e.stopPropagation()  
+        console.log("Productos agregados:", cartProducts) 
+        addProductToCart(data)
     }
 
-    const addStock = () => {
-        setCount(count + 1)
-    }
-    const removeStock = () => {
-        setCountTest(countTest - 1)
-    }
     
     return(
        

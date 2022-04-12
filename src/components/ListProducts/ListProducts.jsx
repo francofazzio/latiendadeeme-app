@@ -1,11 +1,14 @@
-import { useState, useEffect} from 'react';
+import { useState, useEffect, useContext} from 'react';
 import Card from '../Card/Card'
 import mockProductos from '../../Utils/productsMock'
 import { useParams } from 'react-router-dom'
-
+import ThemeContext from '../../context/ThemeContext'
 
     const ListProducts = ({children}) => {
-    const { category } = useParams()
+    
+        const { lightTheme } = useContext(ThemeContext)
+     
+        const { category } = useParams()
 
     const [products, setProducts] = useState([])
 
@@ -36,7 +39,7 @@ import { useParams } from 'react-router-dom'
     
        
     return(
-        <div className="container-cards">
+        <div className={`container-cards ${lightTheme ? 'light-mode' : ''}`}>
          <h2> {children} </h2>
          {products.map ( (product) => {
         const {id} = product
