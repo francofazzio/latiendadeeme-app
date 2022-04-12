@@ -1,79 +1,100 @@
 import { useState, useContext } from 'react';
 import Button from '@mui/material/Button';
-import CartWidget from '../CartWidget/CartWidget';
-import Card from '../Card/Card';
+import { Link } from 'react-router-dom'
 import './NavBar.css'
-import {Link} from 'react-router-dom'
+import CartWidget from '../CartWidget/CartWidget'
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 import ThemeSwitch from './ThemeSwitch'
 import ThemeContext from '../../context/ThemeContext';
 
-function NavBar(props){
-  const { lightTheme, handleTheme } = useContext(ThemeContext)
-  
-  
-  console.log("Light state " , lightTheme)
+function NavBar(props) {
+    const { lightTheme, handleTheme } = useContext(ThemeContext)
+    const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    console.log("Light state: " , lightTheme)
     const pages = [
     {
         title:'Home',
         url: '/'
     },
+ 
     {
-        title:'Nosotros',
+        title:'Productos',
         url: '/nosotros'
     }, 
     {
-        title: 'Productos',
-        url: '/productos'
+        title:'Nosotros',
+        url: '/nosotros'
     },
     {
         title: 'Contacto',
         url: '/contacto'
     }]
-    
-  
-  
-  return(
+    return(
+        //JSX
+        //
         <header className={`main-header ${lightTheme ? ' light-mode' : ''}`}> 
-        <div className='container-logo'>
-            {lightTheme ? (
-                <img src="logo1234.jpeg" className="img-header"/>
-            ) : (
-            <img src="../logo1234.jpeg" className="img-header"/>
-            ) }
+            <div className='container-logo'>
+                {lightTheme ? (
+                    <img src="../logo1234.jpeg" className="img-header"/>
+                ) : (
+                    <img src="../logo1234.jpeg" className="img-header"/>
+                ) }
             </div>
-        <ul className='navbar'>
-                    <li>
-                        <Button className="custom-btn" variant="contained">
-                            <Link to={'/ellas'}>Ellas</Link>
-                        </Button>     
-                    </li>
-                    <li>
-                        <Button className="custom-btn" variant="contained">
-                            <Link to={'/ellos'}>Ellos</Link>
-                        </Button>     
-                    </li>
-                    <li>
-                        <Button className="custom-btn" variant="contained">
-                            <Link to={'/escolares'}>Escolares</Link>
-                        </Button>     
-                    </li>
-                    <button onClick={() => handleTheme()}>Handle Theme</button>
-        {pages.map((page) => {
-            return(       
-             <li>
-               <Button className="custom-btn" variant="contained">
-                 <Link to={page.url}>{page.title}</Link>
-                  </Button>
-             </li>
-            )
-          })}
-        </ul>
-        <ThemeSwitch />
-        <CartWidget />
-      </header>
-      
+            <ul className='navbar'> 
+                {pages.map((page) => {
+                    return(
+                        page.title === 'Productos' ? (
+                        <li>
+                            <Button 
+                                aria-controls={open ? 'basic-menu' : undefined}
+                                aria-haspopup="true"
+                                aria-expanded={open ? 'true' : undefined}
+                                onClick={handleClick}
+                            >{page.title    }</Button>
+                            <Menu
+                                id="basic-menu"
+                                anchorEl={anchorEl}
+                                open={open}
+                                onClose={handleClose}
+                                MenuListProps={{
+                                'aria-labelledby': 'basic-button',
+                                }}
+                            >
+                                <MenuItem onClick={handleClose}>
+                                    <Link to={'/ellas'}>Ellas</Link>
+                                </MenuItem>
+                                <MenuItem onClick={handleClose}>
+                                    <Link to={'/ellos'}>Ellos</Link>
+                                </MenuItem>
+                                <MenuItem onClick={handleClose}>
+                                    <Link to={'/escolares'}>Escolares</Link>
+                                </MenuItem>
+                            </Menu> 
+                        </li>
+                        ) : (
+                        <li>
+                            <Button className="custom-btn" variant="contained">
+                                <Link to={page.url}>{page.title}</Link>
+                            </Button>
+                        </li>
+                        )
+                        
+                    )
+                })}
+            </ul>
+            <ThemeSwitch />
+            <CartWidget />
+        </header>
     )
-    
 }
 
 export default NavBar
