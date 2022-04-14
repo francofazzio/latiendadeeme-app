@@ -122,13 +122,100 @@ p.info__subtitle {
   margin-bottom: 10px;
 }
 
+
+
+
+
+
+
+
+.btn-custom,.btn-custom:hover {
+  background: black !important;
+  border-radius: 0px !important;
+  color: white !important;
+  padding: 5px 20px !important;
+  font-family: 'Montserrat' !important;
+  width: 100% !important;
+}
+.btn-custom a {
+  color: white !important;
+}
+
+.cart-button svg {
+  color: white;
+}
+
+.cart-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-button p {
+  color: white;
+  margin-left: 6px;
+}
+
+.cart-modal .MuiPaper-root.MuiPaper-elevation p {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.cart-modal .MuiMenu-list {
+  width: 300px;
+}
+
+.footer-modal-cart {
+  padding: 0px 10px;
+}
+
+.item-cart-modal {
+  display: flex;
+}
+
+.item-cart-modal__img {
+  overflow: hidden;
+  width: 30%;
+  height: 100px;
+}
+
+.item-cart-modal__info {
+  width: 60%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.item-cart-modal__action {
+  width: 10%;
+}
+
+.item-cart-modal__img img {
+  width: 100%;
+}
+
+.item-cart-modal__info p {
+  padding: 0px !important;
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-size: 13px;
+  text-align: left !important;
+}
+
+
+
+
+
+
+
+
 /*ligthmood*/
 header.main-header.light-mode {
   background: white;
 }
 
 header.main-header.light-mode ul.navbar * {
-  color: black !important;
+  color: black ;
   box-shadow: none;
 }
 
@@ -139,6 +226,8 @@ header.main-header.light-mode ul.navbar * {
 .container-cards.light-mode .card-item {
   background: black;
 }
+
+
 /* cart*/
 .cart-section .col-cart-table__head {
     display: flex;
@@ -207,8 +296,8 @@ header.main-header.light-mode ul.navbar * {
 .cart-footer > button.btn-custom {
   max-width: 300px;
   height: fit-content;
-  background: white !important;
-  color: black !important;
+  background: white ;
+  color: black ;
   border: 1px solid black;
 }
 .cart-checkout-details {
@@ -252,7 +341,7 @@ button.btn-delete {
   height: 40px;
   box-shadow: 1px 1px 5px #00000042;
   cursor: pointer;
-  transition: all 0.2s ease;
+
 }
 
 button.btn-delete:hover {
@@ -260,7 +349,17 @@ button.btn-delete:hover {
 }
 
 
-
+.btn-custom,.btn-custom:hover {
+  background: black ;
+  border-radius: 0px ;
+  color: white ;
+  padding: 5px 20px ;
+  font-family: 'Montserrat' ;
+  width: 100% ;
+}
+.btn-custom a {
+  color: white ;
+}
 
 
 
@@ -317,9 +416,21 @@ button.btn-delete:hover {
 }
 
 .item-cart-modal__info p {
-  padding: 0px !important;
+  padding: 0px ;
   margin-top: 0px;
   margin-bottom: 5px;
   font-size: 13px;
-  text-align: left !important;
+  text-align: left ;
 }
+
+
+/*spinner*/
+.container-progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vh;
+  height: 80vh;
+}
+
+
