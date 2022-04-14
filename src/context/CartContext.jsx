@@ -10,13 +10,12 @@ const CartProvider = ({children}) => {
         let exist = cartProducts.find(cartProduct => cartProduct.id === product.id)
         !exist && setCartProducts(cartProducts => [...cartProducts, product])
     }
-
     const calculeTotalPrice = () => {
         let total = 0
-
-        cartProducts.map( (cartProduct) => {
-           total = cartProduct.price + total
-        })
+       cartProducts.map((cartProduct) => 
+            total = cartProduct.price + total
+            
+         )
 
         return total
     }
