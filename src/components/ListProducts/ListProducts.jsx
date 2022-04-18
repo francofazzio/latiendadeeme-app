@@ -4,22 +4,31 @@ import mockProductos from '../../Utils/productsMock'
 import { useParams } from 'react-router-dom'
 import ThemeContext from '../../context/ThemeContext'
 import CircularProgress from '@mui/material/CircularProgress';
-    const ListProducts = ({children}) => {
+import db from '../../firebase'
+import { collection, getDocs} from 'firebase/firestore'
+
+const ListProducts = ({children}) => {
     
         const { lightTheme } = useContext(ThemeContext)
         const [loading , setLoading] = useState(true)
+       
         const { category } = useParams()
 
     const [products, setProducts] = useState([])
 
-  
-    const getProducts = () => {
-        return new Promise((resolve, reject) => {
-            setTimeout( ()=> {
-                return resolve(mockProductos)
-            }, 2000);
-        });
-        };
+        const getProducts = async () => {
+            const itemsCollection = collection(db, 'productos')
+            const productosSnapshot = await getDocs(itemsCollection)
+            const productList = productosSnapshot.docs.map((doc) => {
+                    let product = doc.data()
+                    product.id = doc.id
+                    console.log("product:", product)
+                    return product
+                }
+            )
+            return productList
+        }
+
         useEffect( () => {
             setProducts([])
             setLoading(true)
@@ -53,4 +62,4 @@ import CircularProgress from '@mui/material/CircularProgress';
 }
 
 export default ListProducts;
-        
+    
