@@ -9,7 +9,7 @@ import ThemeSwitch from './ThemeSwitch'
 import ThemeContext from '../../context/ThemeContext';
 
 function NavBar(props) {
-    const { lightTheme, handleTheme } = useContext(ThemeContext)
+    const { ligthTheme, handleTheme } = useContext(ThemeContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -19,7 +19,7 @@ function NavBar(props) {
         setAnchorEl(null);
     };
 
-    console.log("Light state: " , lightTheme)
+    console.log("Light state: " , ligthTheme)
     const pages = [
     {
         title:'Home',
@@ -41,9 +41,9 @@ function NavBar(props) {
     return(
         //JSX
         //
-        <header className={`main-header ${lightTheme ? ' light-mode' : ''}`}> 
+        <header className={`main-header ${ligthTheme ? 'light-mode' : 'dark-mode'}`}> 
             <div className='container-logo'>
-                {lightTheme ? (
+                {ligthTheme ? (
                     <img src="../logo1234.jpeg" className="img-header"/>
                 ) : (
                     <img src="../logo1234.jpeg" className="img-header"/>
@@ -59,7 +59,7 @@ function NavBar(props) {
                                 aria-haspopup="true"
                                 aria-expanded={open ? 'true' : undefined}
                                 onClick={handleClick}
-                            >{page.title    }</Button>
+                            >{ page.title }</Button>
                             <Menu
                                 id="basic-menu"
                                 anchorEl={anchorEl}

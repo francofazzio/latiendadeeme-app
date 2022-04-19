@@ -11,15 +11,18 @@ const handleTheme = () => {
      console.log("Funcion desde contexto")
 }
 
-  const data = {
-      ligthTheme,
-      handleTheme
-  }
+  // const data = {
+  //     ligthTheme,
+  //     handleTheme
+  // }
 
 
 
     return(
-        <ThemeContext.Provider value={ligthTheme}>
+        <ThemeContext.Provider value={{
+          ligthTheme,
+          handleTheme
+        }}>
             {children}
         </ThemeContext.Provider>
     )

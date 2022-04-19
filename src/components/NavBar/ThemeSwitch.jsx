@@ -55,7 +55,8 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 const ThemeSwitch = () => {
-    const { handleTheme } = useContext(ThemeContext)
+    const { handleTheme } = useContext(ThemeContext);
+    console.log('handleTheme: ', handleTheme);
 
     return(
             <FormControlLabel

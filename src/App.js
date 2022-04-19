@@ -9,10 +9,12 @@ import ListProducts from './components/ListProducts/ListProducts';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Container from '@mui/material/Container';
 //pages
-import HomePage from './pages/Home'
-import ContactPage from './pages/Contact'
-import NotFoundPage from './pages/NotFound'
+import HomePage from './pages/Home';
+import Cart from './pages/Cart';
+import ContactPage from './pages/Contact';
+import NotFoundPage from './pages/NotFound';
 import DetailPage from './pages/Detail';
+
 
 //context
 import { ThemeProvider } from './context/ThemeContext';
@@ -32,6 +34,7 @@ function App() {
         <Route path="/" element={<HomePage />}/>
         <Route path="/:category/" element={<HomePage />}/>
         <Route path="/:category/:id" element={<DetailPage />}/>
+        <Route path="/cart" element={ <Cart /> } />
         <Route path="*" element={<NotFoundPage />}/>
       </Routes>
     </BrowserRouter>

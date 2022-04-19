@@ -5,7 +5,9 @@ import CartContext from '../context/CartContext';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 const CartPage = () => {
-    const { cartProducts, deleteProduct, calculeTotalPrice } = useContext(CartContext)
+    const { cartProducts, deleteProduct, total } = useContext(CartContext)
+
+    console.warn('total: ',total);
 
     console.log("cartProducts:", cartProducts)
     return(
@@ -49,11 +51,11 @@ const CartPage = () => {
                     <div className='cart-checkout-details'>
                         <div className='cart-checkout__subtotal'>
                             <p>Subtotal</p>
-                            <span>$ {calculeTotalPrice}</span>
+                            <span>$ {total} </span>
                         </div>
                         <div className='cart-checkout__total'>
                             <p>Total</p>
-                            <span>$ {calculeTotalPrice}</span>
+                            <span>$ {total}</span>
                         </div>
                         <Button className='btn-custom'>Completar Compra</Button>
                     </div>

@@ -1,23 +1,35 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
 
 
 const CartProvider = ({children}) => {
-    const [cartProducts, setCartProducts] = useState([])
+    const [cartProducts, setCartProducts] = useState([]);
+    const [total, setTotal] = useState(0);
+
+    useEffect(() => {
+
+        if(cartProducts.length){
+            calculeTotalPrice();
+        }else{
+            setTotal(0);
+        }
+      
+    }, [ cartProducts ])
+    
 
     const addProductToCart = (product) => {
         let exist = cartProducts.find(cartProduct => cartProduct.id === product.id)
         !exist && setCartProducts(cartProducts => [...cartProducts, product])
     }
     const calculeTotalPrice = () => {
-        let total = 0
-       cartProducts.map((cartProduct) => 
-            total = cartProduct.price + total
-            
-         )
+        let summary = 0;
+        cartProducts.forEach((cartProduct) => 
+            summary = cartProduct.price + summary
+         );
 
-        return total
+        setTotal(summary); 
+        
     }
 
     const deleteProduct = (product) => {
@@ -27,7 +39,7 @@ const CartProvider = ({children}) => {
     const data = {
         cartProducts,
         addProductToCart,
-        calculeTotalPrice,
+        total,
         deleteProduct
     }
 
