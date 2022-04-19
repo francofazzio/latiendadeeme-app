@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom'
 import './NavBar.css'
@@ -7,10 +7,14 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ThemeSwitch from './ThemeSwitch'
 import ThemeContext from '../../context/ThemeContext';
+import { collection, getDocs } from 'firebase/firestore';
+import db from '../../firebase';
+
 
 function NavBar(props) {
     const { ligthTheme, handleTheme } = useContext(ThemeContext)
     const [anchorEl, setAnchorEl] = useState(null);
+    const [routes, setRoutes] = useState([])
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -19,25 +23,23 @@ function NavBar(props) {
         setAnchorEl(null);
     };
 
+    useEffect(() => {
+        getRoutes()
+    },[])
+
+    const getRoutes = async() => {
+        const routesCollection = collection(db, 'rutas')
+        const routesSnapshot = await getDocs(routesCollection)
+        const routesList = routesSnapshot.docs.map( (doc) => {
+        console.log("routes document: ", doc.data())
+        return doc.data()
+        } )
+        setRoutes(routesList)
+     
+    }
+
     console.log("Light state: " , ligthTheme)
-    const pages = [
-    {
-        title:'Home',
-        url: '/'
-    },
- 
-    {
-        title:'Productos',
-        url: '/nosotros'
-    }, 
-    {
-        title:'Nosotros',
-        url: '/nosotros'
-    },
-    {
-        title: 'Contacto',
-        url: '/contacto'
-    }]
+    
     return(
         //JSX
         //
@@ -50,7 +52,7 @@ function NavBar(props) {
                 ) }
             </div>
             <ul className='navbar'> 
-                {pages.map((page) => {
+                {routes.map((page) => {
                     return(
                         page.title === 'Productos' ? (
                         <li>
