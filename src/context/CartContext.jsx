@@ -21,6 +21,7 @@ const CartProvider = ({children}) => {
     const addProductToCart = (product) => {
         let exist = cartProducts.find(cartProduct => cartProduct.id === product.id)
         !exist && setCartProducts(cartProducts => [...cartProducts, product])
+        localStorage.setItem("productos",JSON.stringify([...cartProducts, product]))
     }
     const calculeTotalPrice = () => {
         let summary = 0;
