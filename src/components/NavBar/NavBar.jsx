@@ -52,10 +52,10 @@ function NavBar(props) {
                 ) }
             </div>
             <ul className='navbar'> 
-                {routes.map((page) => {
+                {routes.map((page, i) => {
                     return(
                         page.title === 'Productos' ? (
-                        <li>
+                        <li key={i}>
                             <Button 
                                 aria-controls={open ? 'basic-menu' : undefined}
                                 aria-haspopup="true"
