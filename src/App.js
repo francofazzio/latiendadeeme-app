@@ -14,7 +14,7 @@ import Cart from './pages/Cart';
 import ContactPage from './pages/Contact';
 import NotFoundPage from './pages/NotFound';
 import DetailPage from './pages/Detail';
-
+import NosotrosPage from './pages/Nosotros';
 
 //context
 import { ThemeProvider } from './context/ThemeContext';
@@ -35,7 +35,9 @@ function App() {
         <Route path="/:category/" element={<HomePage />}/>
         <Route path="/:category/:id" element={<DetailPage />}/>
         <Route path="/cart" element={ <Cart /> } />
+        <Route path="/nosotros" element={<NosotrosPage />}/>
         <Route path="*" element={<NotFoundPage />}/>
+      
       </Routes>
     </BrowserRouter>
     </ThemeProvider>
