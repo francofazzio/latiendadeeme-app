@@ -30,8 +30,8 @@ function App() {
        <BrowserRouter>
        <NavBar />
         <Routes>
-        <Route path="/contacto" element={<ContactPage />}/>
         <Route path="/" element={<HomePage />}/>
+        <Route path="/contacto" element={<ContactPage />}/>
         <Route path="/:category/" element={<HomePage />}/>
         <Route path="/:category/:id" element={<DetailPage />}/>
         <Route path="/cart" element={ <Cart /> } />

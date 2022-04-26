@@ -15,7 +15,7 @@ export default function Card({ data }) {
     const [ countTest, setCountTest ] = useState(1)
     
     useEffect( () => {
-        console.log("cartProducts:", cartProducts)
+      
         const onScrollWindow = () => {
             if(window.scrollY > 100 ){
                 console.log("Scroll mayor a 100")
@@ -43,7 +43,7 @@ export default function Card({ data }) {
     return(
        
         <div className="card-item" onClick={changePage}>
-                <img src={`./${image}`} alt={image} />
+                <div className='card-item__img'><img src={`./${image}`} alt={image} /></div>
                 <div className='container-card-data'>
                     <h2>{title}</h2>
                     <p>Precio : $ {price}</p>

@@ -4,9 +4,9 @@ import Container from '@mui/material/Container';
 const Nosotros = () => {
     return (
         <Container className='container-general'>
-      <div>
-            <h1>Nosotros</h1>
-        <img alt="imagen de bolsita" src="../emi.jpg" style= {{ height: '90vh',width:'100vw' }} />
+      <div className='container-img'>
+         
+        <img alt="imagen de bolsita" src="../emi.jpg" />
         
     
         <section>

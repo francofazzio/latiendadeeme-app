@@ -13,6 +13,10 @@ header.main-header{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
  background-color: #eee8e4c7;
 }
+.container-img{
+  width: 100vh;
+  height: 90vh;
+}
 ul.navbar{
   list-style: none;
   display: flex;

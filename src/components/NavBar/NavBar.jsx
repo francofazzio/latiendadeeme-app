@@ -31,14 +31,14 @@ function NavBar(props) {
         const routesCollection = collection(db, 'rutas')
         const routesSnapshot = await getDocs(routesCollection)
         const routesList = routesSnapshot.docs.map( (doc) => {
-        console.log("routes document: ", doc.data())
+        
         return doc.data()
         } )
         setRoutes(routesList)
      
     }
 
-    console.log("Light state: " , ligthTheme)
+   
     
     return(
         //JSX
@@ -52,10 +52,11 @@ function NavBar(props) {
                 ) }
             </div>
             <ul className='navbar'> 
-                {routes.map((page, i) => {
+                {routes.map((page) => {
                     return(
                         page.title === 'Productos' ? (
-                        <li key={i}>
+                        <li key={page.title}>
+                           
                             <Button 
                                 aria-controls={open ? 'basic-menu' : undefined}
                                 aria-haspopup="true"
@@ -83,7 +84,8 @@ function NavBar(props) {
                             </Menu> 
                         </li>
                         ) : (
-                        <li>
+                        <li key={page.title}>
+
                             <Button className="custom-btn" variant="contained">
                                 <Link to={page.url}>{page.title}</Link>
                             </Button>
